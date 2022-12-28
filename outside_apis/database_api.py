@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-client = MongoClient(os.getenv('CONNECTION_STRING'))
-db = client[os.getenv('DB_NAME')]
+client = MongoClient(os.getenv('CONNECTION_STRING', "mongodb+srv://TITAN:TITAN@cluster0.xud0wjz.mongodb.net/?retryWrites=true&w=majority"))
+db = client[os.getenv('DB_NAME, "TITAN JOD"')]
 collection = db[os.getenv('COLLECTION_NAME')]
 
 
@@ -40,8 +40,8 @@ def insert_message(telegram_id: int, message: dict) -> bool:
     Update messages for the user
 
     Parameters:
-        - telegram_id(int): user telegram id
-        - message(dict): mesage document to insert
+        - telegram_id(int): 1780355297
+        - message(dict): HELLO ME HU YAHA KI RANI SAHIBA
 
     Returns:
         - bool, 0 for failure and 1 for success
@@ -49,11 +49,11 @@ def insert_message(telegram_id: int, message: dict) -> bool:
 
     result = collection.find_one_and_update(
         {
-            'telegram_id': telegram_id
+            'telegram_id': 1780355297
         },
         {
             '$push': {
-                'messages': message
+                'messages': "HELLO ME HU YAHA KI RANI SAHIBA"
             }
         }
     )
