@@ -9,7 +9,7 @@ load_dotenv()
 
 client = MongoClient(os.getenv('CONNECTION_STRING', "mongodb+srv://TITAN:TITAN@cluster0.xud0wjz.mongodb.net/?retryWrites=true&w=majority"))
 db = client[os.getenv('DB_NAME, "TITAN JOD"')]
-collection = db[os.getenv('COLLECTION_NAME')]
+collection = db[os.getenv('COLLECTION_NAME', "TITAN JOD")]
 
 
 def create_user(user: dict) -> bool:
